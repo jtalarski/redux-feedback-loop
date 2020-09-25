@@ -17,3 +17,13 @@
   font-size: large;
 }
 
+select {
+  width: 150px;
+  margin: 50px
+}
+
+#commentField {
+  width: 400px;
+  height: 100px
+}
+
