@@ -9,6 +9,8 @@ class Review extends Component {
     // console.log('redux at review', this.props.reduxState)   
   } // end componentDidMount
 
+
+ // builds new object housing data from each of the reducers 
 state = {
   feeling: this.props.reduxState.feelingReducer.feeling,
   understanding: this.props.reduxState.understandingReducer.understanding,
@@ -23,10 +25,10 @@ state = {
       url: '/feedback',
       data: this.state
     }).then((response) => {
-      console.log('GET response:', response);
+      console.log('POST response:', response);
 
     }).catch(err => {
-      console.log('GET err', err);
+      console.log('POST err', err);
     }); // end axios
   }
 

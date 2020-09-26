@@ -17,10 +17,11 @@
 [x] Take input from comments and update reduxState
 [x] Take input from review and update reduxState
 [] Build out Success page
-[] Build post route on server-side
-    [] test
-[] Build axios post on client-side
-    [] test
+[x] Build post route on server-side
+    [x] test
+[x] Build axios post on client-side
+    [x] test
 [x] Redirect user to take another survey
 [] Clear inputs
 [] Watch dEv's videos
+[] require inputs
