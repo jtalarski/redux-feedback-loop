@@ -27,7 +27,7 @@ state = {
       console.log('GET response:', response);
 
     }).catch(err => {
-      console.log('GET err', err);
+      console.log('Post err', err);
     }); // end axios
   }
 
