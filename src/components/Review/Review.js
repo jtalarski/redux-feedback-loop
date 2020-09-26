@@ -9,11 +9,12 @@ class Review extends Component {
   } // end componentDidMount
 
   onSubmit = () => {
-    console.log('onSubmit triggered');
+    console.log('onSubmit triggered', this.props.reduxState);
     axios({
       method: 'POST',
-      url: '/',
-      data: this.state
+      url: '/feedback',
+      data: this.props.reduxState
+
     }).then((response) => {
       console.log('GET response:', response);
 
@@ -38,7 +39,7 @@ class Review extends Component {
         <p>Comments: {this.props.reduxState.commentsReducer.comments}</p>
         <br></br>
         <hr></hr>
-        <Link to="/success"><button onClick={this.onSubmit}>submit</button></Link>
+        <Link to="/success"><button onClick={()=> this.onSubmit()}>Submit</button></Link>
         
       </div>
     ); // end return

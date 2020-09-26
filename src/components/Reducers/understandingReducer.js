@@ -3,8 +3,8 @@ const initialUnderstanding = {
 }
 
 const understandingReducer = (state = initialUnderstanding, action) => {
-    console.log('feelingReducer', state, action);
-    if (action.type === 'SET_FEELING') {
+   
+    if (action.type === 'SET_UNDERSTANDING') {
         return {
             understanding: action.payload
         }

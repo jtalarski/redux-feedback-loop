@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 class Feeling extends Component {
   componentDidMount(){
     console.log( 'Feeling mounted' ); 
-     
+     //document.getElementById("feelingForm").reset();
   } // end componentDidMount
 
 
@@ -35,6 +35,15 @@ onHandleChange (event) {
             <option value="5">5</option>
         </select>
        
+       {/* <form id="feelingForm">
+       <select onChange={(event) => this.onHandleChange(event)} velue="" name="feeling?">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+       </form> */}
        
 
 

@@ -4,7 +4,7 @@ const initialSupport = {
 
 const supportReducer = (state = initialSupport, action) => {
     console.log('feelingReducer', state, action);
-    if (action.type === 'SET_FEELING') {
+    if (action.type === 'SET_SUPPORTED') {
         return {
             support: action.payload
         }
