@@ -5,15 +5,23 @@ import {Link} from 'react-router-dom'
 
 class Review extends Component {
   componentDidMount(){
-    console.log( 'Review mounted' );   
+    // console.log( 'Review mounted' );
+    // console.log('redux at review', this.props.reduxState)   
   } // end componentDidMount
 
+state = {
+  feeling: this.props.reduxState.feelingReducer.feeling,
+  understanding: this.props.reduxState.understandingReducer.understanding,
+  support: this.props.reduxState.supportReducer.support,
+  comments: this.props.reduxState.commentsReducer.comments
+}
+
   onSubmit = () => {
-    console.log('onSubmit triggered', this.props.reduxState);
+    console.log('onSubmit triggered this state', this.state);
     axios({
       method: 'POST',
-      url: '/feedback',
-      data: this.props.reduxState
+      url: '/',
+      data: this.state
 
     }).then((response) => {
       console.log('GET response:', response);

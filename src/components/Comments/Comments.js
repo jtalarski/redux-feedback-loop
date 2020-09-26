@@ -8,8 +8,8 @@ class Comments extends Component {
   } // end componentDidMount
 
   onHandleChange (event) {
-    // console.log('in onHandleChange Comments', event.target.value)
-    // console.log('reduxState Comments', this.props.reduxState);
+    console.log('in onHandleChange Comments', event.target.value)
+    console.log('reduxState Comments', this.props.reduxState);
     this.props.dispatch ({
       type: 'SET_COMMENTS',
       payload: event.target.value

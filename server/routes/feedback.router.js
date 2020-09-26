@@ -3,9 +3,10 @@ const router = express.Router();
 const pool = require('../modules/pool');
 
 router.post('/', (req, res) => {
-    // let newFeedback = req.body;
-    // let sqlText = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments") VALUES ($1, $2, $3, $4);`
-    // pool.query(sqlText, [newFeedback.feeling, newFeedback.understanding, newFeedback.support, newFeedback.comments ])
+    console.log('Get on server hit');
+    let newFeedback = req.body;
+    let sqlText = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments") VALUES ($1, $2, $3, $4);`
+    pool.query(sqlText, [newFeedback.feeling, newFeedback.understanding, newFeedback.support, newFeedback.comments ])
 }).then((result) => {
     console.log('Added feedback', newFeedback);
     res.sendStatus(201);

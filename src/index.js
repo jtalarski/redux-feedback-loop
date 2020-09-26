@@ -10,15 +10,12 @@ import feelingReducer from './components/Reducers/feelingsReducer'
 import understandingReducer from './components/Reducers/understandingReducer'
 import supportReducer from './components/Reducers/supportReducer'
 import commentsReducer from './components/Reducers/commentsReducer'
-import successReducer   from './components/Reducers/successReducer'
-
 const store = createStore(
     combineReducers({
         feelingReducer,
         understandingReducer,
         supportReducer,
         commentsReducer,
-        successReducer
     })
 )
 
