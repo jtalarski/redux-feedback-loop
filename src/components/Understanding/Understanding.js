@@ -9,8 +9,8 @@ class Understanding extends Component {
   } // end componentDidMount
   
   onHandleChange (event) {
-    console.log('in onHandleChange Understanding', event.target.value)
-    console.log('reduxState Understanding', this.props.reduxState);
+    // console.log('in onHandleChange Understanding', event.target.value)
+    // console.log('reduxState Understanding', this.props.reduxState);
     this.props.dispatch({
       type: 'SET_UNDERSTANDING',
       payload: event.target.value

@@ -8,14 +8,11 @@ class Feeling extends Component {
      
   } // end componentDidMount
 
-state = {
-  
-}
 
 
 onHandleChange (event) {
-  console.log('in onHandleChange Feeling', event.target.value);
-  console.log('reduxState', this.props.reduxState);
+  //console.log('in onHandleChange Feeling', event.target.value);
+  //console.log('reduxState feeling', this.props.reduxState);
   this.props.dispatch({
     type: 'SET_FEELING',
     payload: event.target.value
@@ -26,7 +23,7 @@ onHandleChange (event) {
 
 
   render() {
-    console.log('reduxState', this.props.reduxState)
+    //console.log('reduxState', this.props.reduxState)
     return (
       <div>
         <h1>How are you feeling today?</h1>

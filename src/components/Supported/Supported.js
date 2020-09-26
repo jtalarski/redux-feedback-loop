@@ -7,8 +7,8 @@ class Supported extends Component {
   } // end componentDidMount
 
   onHandleChange (event) {
-    console.log('in onHandleChange Supported', event.target.value)
-    console.log('reduxState supported', this.props.reduxState);
+    // console.log('in onHandleChange Supported', event.target.value)
+    // console.log('reduxState supported', this.props.reduxState);
     this.props.dispatch({
       type: 'SET_SUPPORTED',
       payload: event.target.value

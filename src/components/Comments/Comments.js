@@ -8,8 +8,8 @@ class Comments extends Component {
   } // end componentDidMount
 
   onHandleChange (event) {
-    console.log('in onHandleChange Comments', event.target.value)
-    console.log('reduxState Comments', this.props.reduxState);
+    // console.log('in onHandleChange Comments', event.target.value)
+    // console.log('reduxState Comments', this.props.reduxState);
     this.props.dispatch ({
       type: 'SET_COMMENTS',
       payload: event.target.value
@@ -22,9 +22,9 @@ class Comments extends Component {
       <div>
         <h1>Comments</h1>
         <p>Any comments you want to leave?</p>
-        <input type="text" id="commentField"/>
+        <input onChange={(event)=> this.onHandleChange(event)} type="text" id="commentField"/>
         <br></br>
-        <Link to="/review"><button onChange={(event)=> this.onHandleChange(event)}>Next</button></Link>
+        <Link to="/review"><button >Next</button></Link>
       </div>
     ); // end return
   } // end render
