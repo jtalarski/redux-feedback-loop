@@ -4,9 +4,17 @@ const pool = require('./pool');
 const bodyParser = require('body-parser');
 
 router.get('/', (req, res) => {
-    console.log('/Get it');
+    console.log('Get Hit');
     res.send('meow');
+    // const queryText = `SELECT * FROM feedback;`;
+    // pool.query(queryText).then ((results)=>{
+
+    // }).catch((err)=>{
+    //     console.log(err);
+    //     res.sendStatus(500);
+    // })
 })
+
 //   let newFeedback = req.body;
 //     let sqlText = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments") VALUES ($1, $2, $3, $4);`
 //     pool.query(sqlText, [newFeedback.feeling, newFeedback.understanding, newFeedback.support, newFeedback.comments ])
