@@ -15,7 +15,7 @@ class Comments extends Component {
       payload: event.target.value
     })
     }
-  }
+  
 
   render() {
     return (
