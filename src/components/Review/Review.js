@@ -1,11 +1,32 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import axios from 'axios'
 //import {Link} from 'react-router-dom'
 
 class Review extends Component {
   componentDidMount(){
     console.log( 'Review mounted' );   
   } // end componentDidMount
+
+  onSubmit = () => {
+    console.log('onSubmit triggered');
+    axios({
+      method: 'POST',
+      url: '/',
+      data: this.state
+    }).then((response) => {
+      console.log('GET response:', response);
+
+    }).catch(err => {
+      console.log('GET err', err);
+    }); // end axios
+  }
+
+
+
+
+
+
 
   render() {
     return (
@@ -15,6 +36,9 @@ class Review extends Component {
         <p>Understanding: {this.props.reduxState.understandingReducer.understanding}</p>
         <p>Support: {this.props.reduxState.supportReducer.support}</p>
         <p>Comments: {this.props.reduxState.commentsReducer.comments}</p>
+        <br></br>
+        <hr></hr>
+        <button onClick={this.onSubmit}>submit</button>
       </div>
     ); // end return
   } // end render

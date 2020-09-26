@@ -11,8 +11,8 @@
     [x] Review (with submit
 [x] Initial commit
 [x] Create store
-[] Take input from feelings and update reduxState
-[] Take input from understanding and update reduxState
-[] Take input from supported and update reduxState
-[] Take input from comments and update reduxState
-[] Take input from review and update reduxState
+[x] Take input from feelings and update reduxState
+[x] Take input from understanding and update reduxState
+[x] Take input from supported and update reduxState
+[x] Take input from comments and update reduxState
+[x] Take input from review and update reduxState
