@@ -17,17 +17,16 @@ state = {
 }
 
   onSubmit = () => {
-    console.log('onSubmit triggered this state', this.state);
+    console.log('onSubmit triggered');
     axios({
       method: 'POST',
-      url: '/',
+      url: '/feedback',
       data: this.state
-
     }).then((response) => {
       console.log('GET response:', response);
 
     }).catch(err => {
-      console.log('Post err', err);
+      console.log('GET err', err);
     }); // end axios
   }
 
