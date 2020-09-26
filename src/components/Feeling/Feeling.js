@@ -4,14 +4,33 @@ import {Link} from 'react-router-dom'
 
 class Feeling extends Component {
   componentDidMount(){
-    console.log( 'Feeling mounted' );   
+    console.log( 'Feeling mounted' ); 
+     
   } // end componentDidMount
 
+state = {
+  
+}
+
+
+onHandleChange (event) {
+  console.log('in onHandleChange Feeling', event.target.value);
+  console.log('reduxState', this.props.reduxState);
+  this.props.dispatch({
+    type: 'SET_FEELING',
+    payload: event.target.value
+  })
+ 
+}
+
+
+
   render() {
+    console.log('reduxState', this.props.reduxState)
     return (
       <div>
         <h1>How are you feeling today?</h1>
-        <select name="feeling?">
+        <select onChange={(event) => this.onHandleChange(event)} name="feeling?">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -25,4 +44,13 @@ class Feeling extends Component {
   } // end render
 } // end class
 
-export default Feeling;
+
+const mapStateToProps = (reduxState) => {
+  return {
+    reduxState
+  };
+
+}
+
+
+export default connect(mapStateToProps)(Feeling);

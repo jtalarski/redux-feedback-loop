@@ -1,16 +1,26 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom'
-
+import {connect} from 'react-redux'
 class Supported extends Component {
   componentDidMount(){
     console.log( 'Supported mounted' );   
   } // end componentDidMount
 
+  onHandleChange (event) {
+    console.log('in onHandleChange Supported', event.target.value)
+    console.log('reduxState supported', this.props.reduxState);
+    this.props.dispatch({
+      type: 'SET_SUPPORTED',
+      payload: event.target.value
+    })
+  }
+  
+  
   render() {
     return (
       <div>
         <h1>How well are you being supported</h1>
-        <select name="supported?">
+        <select onChange={(event) => this.onHandleChange(event)} name="supported?">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -23,4 +33,11 @@ class Supported extends Component {
   } // end render
 } // end class
 
-export default Supported;
+const mapStateToProps = (reduxState) => {
+  return {
+    reduxState
+  };
+
+}
+
+export default connect(mapStateToProps)(Supported);
