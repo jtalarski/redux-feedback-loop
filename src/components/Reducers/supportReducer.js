@@ -1,5 +1,5 @@
 const initialSupport = {
-    support: "1"
+    support: ""
 }
 
 const supportReducer = (state = initialSupport, action) => {

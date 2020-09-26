@@ -5,8 +5,10 @@ import {Link} from 'react-router-dom'
 
 class Success extends Component {
   componentDidMount(){
-    console.log( '_template mounted' );   
+    console.log( 'Success mounted' );   
   } // end componentDidMount
+ 
+
 
   render() {
     return (

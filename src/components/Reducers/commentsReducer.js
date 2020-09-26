@@ -1,5 +1,5 @@
 const initialComment = {
-    comments: "none"
+    comments: ""
 }
 
 const commentsReducer = (state = initialComment, action) => {

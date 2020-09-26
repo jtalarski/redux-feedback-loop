@@ -27,7 +27,7 @@ onHandleChange (event) {
     return (
       <div>
         <h1>How are you feeling today?</h1>
-        <select onChange={(event) => this.onHandleChange(event)} name="feeling?">
+        <select onChange={(event) => this.onHandleChange(event)} velue="" name="feeling?">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -35,6 +35,9 @@ onHandleChange (event) {
             <option value="5">5</option>
         </select>
        
+       
+
+
        <Link to="/understanding"><button>Next</button></Link>
       </div>
     ); // end return

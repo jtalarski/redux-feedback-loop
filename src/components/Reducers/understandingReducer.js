@@ -1,5 +1,5 @@
 const initialUnderstanding = {
-    understanding: "1"
+    understanding: ""
 }
 
 const understandingReducer = (state = initialUnderstanding, action) => {

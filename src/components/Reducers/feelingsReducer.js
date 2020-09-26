@@ -1,5 +1,5 @@
 const initialFeeling = {
-    feeling: "1"
+    feeling: ""
 }
 
 const feelingReducer = (state = initialFeeling, action) => {
