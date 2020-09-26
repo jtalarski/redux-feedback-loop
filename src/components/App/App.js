@@ -7,7 +7,7 @@ import Supported from '../Supported/Supported';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
 import { HashRouter as Router, Route} from 'react-router-dom';
-
+import Success from '../Success/Success'
 class App extends Component {
   render() {
     return (
@@ -31,6 +31,9 @@ class App extends Component {
           </Route>
         <Route path='/review'>
           <Review />
+        </Route>
+        <Route path='/success'>
+          <Success/>
         </Route>
 
         <br/>

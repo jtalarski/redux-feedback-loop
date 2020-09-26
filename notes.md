@@ -16,3 +16,8 @@
 [x] Take input from supported and update reduxState
 [x] Take input from comments and update reduxState
 [x] Take input from review and update reduxState
+[] Build post route on server-side
+    [] test
+[] Build axios post on client-side
+    [] test
+[] Redirect user to take another survey

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import axios from 'axios'
-//import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 class Review extends Component {
   componentDidMount(){
@@ -38,7 +38,8 @@ class Review extends Component {
         <p>Comments: {this.props.reduxState.commentsReducer.comments}</p>
         <br></br>
         <hr></hr>
-        <button onClick={this.onSubmit}>submit</button>
+        <Link to="/success"><button onClick={this.onSubmit}>submit</button></Link>
+        
       </div>
     ); // end return
   } // end render
