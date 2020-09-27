@@ -8,13 +8,18 @@ class Understanding extends Component {
     
   } // end componentDidMount
   
+  state = {
+    button: true
+  }
+  
   onHandleChange (event) {
     // console.log('in onHandleChange Understanding', event.target.value)
     // console.log('reduxState Understanding', this.props.reduxState);
     this.props.dispatch({
       type: 'SET_UNDERSTANDING',
       payload: event.target.value
-    })
+    });
+    document.getElementById("nextBtn").disabled = false;
   }
 
 
@@ -22,14 +27,18 @@ class Understanding extends Component {
     return (
       <div>
           <h1>How well are you understanding the content?</h1>
+          <h4>You must give a score to proceed to the next question</h4>
         <select onChange={(event) => this.onHandleChange(event)} name="content?">
+            <option>Choose a score</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
         </select>
-        <Link to="/supported"><button>Next</button></Link>
+        <Link to="/supported"><button id="nextBtn" disabled>Next</button></Link>
+        <br></br>
+        <Link to="/"><button >Back</button></Link>
       </div>
     ); // end return
   } // end render

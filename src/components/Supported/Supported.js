@@ -12,7 +12,8 @@ class Supported extends Component {
     this.props.dispatch({
       type: 'SET_SUPPORTED',
       payload: event.target.value
-    })
+    });
+    document.getElementById("nextBtn").disabled = false;
   }
   
   
@@ -20,14 +21,19 @@ class Supported extends Component {
     return (
       <div>
         <h1>How well are you being supported</h1>
+        <h4>You must give a score to proceed to the next question</h4>
         <select onChange={(event) => this.onHandleChange(event)} name="supported?">
+            <option>Choose a score</option>
+            <option value="">Select Score</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
         </select>
-        <Link to="/comments"><button>Next</button></Link>
+        <Link to="/comments"><button id="nextBtn" disabled>Next</button></Link>
+        <br></br>
+        <Link to="/understanding"><button >Back</button></Link>
       </div>
     ); // end return
   } // end render

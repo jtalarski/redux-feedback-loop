@@ -4,20 +4,23 @@ import {Link} from 'react-router-dom'
 
 class Feeling extends Component {
   componentDidMount(){
-    console.log( 'Feeling mounted' ); 
-     //document.getElementById("feelingForm").reset();
+    console.log( 'Feeling mounted' );
+   //this.setDisabled()   
   } // end componentDidMount
 
 
+// setDisabled = () => {
+//   document.getElementById("myBtn").disabled = true;
+// }
+
 
 onHandleChange (event) {
-  //console.log('in onHandleChange Feeling', event.target.value);
-  //console.log('reduxState feeling', this.props.reduxState);
-  this.props.dispatch({
+  
+this.props.dispatch({
     type: 'SET_FEELING',
     payload: event.target.value
-  })
- 
+  });
+  document.getElementById("nextBtn").disabled = false;
 }
 
 
@@ -27,7 +30,9 @@ onHandleChange (event) {
     return (
       <div>
         <h1>How are you feeling today?</h1>
+        <h4>You must give a score to proceed to the next question</h4>
         <select onChange={(event) => this.onHandleChange(event)} value={this.props.feeling} name="feeling?" required>
+            <option>Choose a score</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -35,19 +40,8 @@ onHandleChange (event) {
             <option value="5">5</option>
         </select>
        
-       {/* <form id="feelingForm">
-       <select onChange={(event) => this.onHandleChange(event)} velue="" name="feeling?">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-        </select>
-       </form> */}
-       
 
-
-       <Link to="/understanding"><button>Next</button></Link>
+       <Link to="/understanding"><button id="nextBtn" disabled >Next</button></Link>
       </div>
     ); // end return
   } // end render
