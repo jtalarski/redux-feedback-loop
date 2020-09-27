@@ -1,22 +1,41 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
 class Supported extends Component {
   componentDidMount(){
-    console.log( 'Supported mounted' );   
+    console.log( 'Supported mounted' );
+  
   } // end componentDidMount
+ 
+  state = {
+    selectedOption: null
+  }
 
   onHandleChange (event) {
     // console.log('in onHandleChange Supported', event.target.value)
     // console.log('reduxState supported', this.props.reduxState);
+    this.setState ({
+      selectedOption: "Chosen"
+    });
     this.props.dispatch({
       type: 'SET_SUPPORTED',
       payload: event.target.value
-    });
-    document.getElementById("nextBtn").disabled = false;
+    })
+  }
+  nextQuestion = () => {
+
+  if(
+    this.state.selectedOption !=="Chosen"
+  ){
+    alert('You must select a score')
+  } else {
+    this.props.history.push('/comments')
   }
   
+  }
+
   
+
   render() {
     return (
       <div>
@@ -31,7 +50,7 @@ class Supported extends Component {
             <option value="4">4</option>
             <option value="5">5</option>
         </select>
-        <Link to="/comments"><button id="nextBtn" disabled>Next</button></Link>
+        <button onClick={this.nextQuestion}>Next</button>
         <br></br>
         <Link to="/understanding"><button >Back</button></Link>
       </div>
@@ -46,4 +65,4 @@ const mapStateToProps = (reduxState) => {
 
 }
 
-export default connect(mapStateToProps)(Supported);
+export default connect(mapStateToProps)(withRouter(Supported));

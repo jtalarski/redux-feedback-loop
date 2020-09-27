@@ -1,41 +1,29 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-//import {Link} from 'react-router-dom'
-import {withRouter} from 'react-router-dom'
+import {Link} from 'react-router-dom'
+
 class Feeling extends Component {
   componentDidMount(){
     console.log( 'Feeling mounted' );
-  
    //this.setDisabled()   
   } // end componentDidMount
 
 
-state = {
-  selectedOption: null
-}
-
+// setDisabled = () => {
+//   document.getElementById("myBtn").disabled = true;
+// }
 
 
 onHandleChange (event) {
-  this.setState ({
-    selectedOption: "Chosen"
-  });
+  
 this.props.dispatch({
     type: 'SET_FEELING',
     payload: event.target.value
-  })
+  });
+  document.getElementById("nextBtn").disabled = false;
 }
 
-nextQuestion = () => {
-if(
-  this.state.selectedOption !=="Chosen"
-){
-  alert('You must select a score')
-} else {
-  this.props.history.push('/understanding')
-}
 
-}
 
   render() {
     //console.log('reduxState', this.props.reduxState)
@@ -43,7 +31,7 @@ if(
       <div>
         <h1>How are you feeling today?</h1>
         <h4>You must give a score to proceed to the next question</h4>
-        <select onChange={(event) => this.onHandleChange(event)} value={this.props.feeling} name="feeling?">
+        <select onChange={(event) => this.onHandleChange(event)} value={this.props.feeling} name="feeling?" required>
             <option>Choose a score</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -53,7 +41,7 @@ if(
         </select>
        
 
-       <button onClick={this.nextQuestion}>Next</button>
+       <Link to="/understanding"><button id="nextBtn" disabled >Next</button></Link>
       </div>
     ); // end return
   } // end render
@@ -68,4 +56,4 @@ const mapStateToProps = (reduxState) => {
 }
 
 
-export default connect(mapStateToProps)(withRouter(Feeling));
+export default connect(mapStateToProps)(Feeling);
