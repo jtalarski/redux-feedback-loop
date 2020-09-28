@@ -19,7 +19,7 @@ state = {
 onHandleChange (event) {
   this.setState ({
     selectedOption: "Chosen"
-  });
+  })
 this.props.dispatch({
     type: 'SET_FEELING',
     payload: event.target.value
@@ -27,6 +27,7 @@ this.props.dispatch({
 }
 
 nextQuestion = () => {
+
 if(
   this.state.selectedOption !=="Chosen"
 ){

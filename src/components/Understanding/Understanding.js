@@ -9,7 +9,7 @@ class Understanding extends Component {
   } // end componentDidMount
   
   state = {
-    selectedUnderstandingOption: null
+    selectedOption: null
   }
   
   onHandleChange (event) {
