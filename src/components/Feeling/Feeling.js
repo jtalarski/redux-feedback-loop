@@ -44,7 +44,7 @@ if(
       <div>
         <h1>How are you feeling today?</h1>
         <h4>You must give a score to proceed to the next question</h4>
-        <select onChange={(event) => this.onHandleChange(event)} value={this.props.feeling} name="feeling?">
+        <select onChange={(event) => this.onHandleChange(event)} name="feeling?">
             <option>Choose a score</option>
             <option value="1">1</option>
             <option value="2">2</option>
